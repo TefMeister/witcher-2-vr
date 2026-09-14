@@ -1,0 +1,32 @@
+======================================================================
+D:/Program Files (x86)/Steam/steamapps/common/the witcher 2/bin/witcher2.exe
+  bits=32  linked=2013-05-09T11:27:24  imagebase=0x400000
+  ASLR(DYNAMIC_BASE)=NO  NX=yes  relocs_stripped=no
+  sections:
+    .text      vaddr=    0x1000 vsize=   9082029 rawsize=   9082368 chars=0x60000020
+    PSFD00     vaddr=  0x8ab000 vsize=      7786 rawsize=      8192 chars=0x60000020
+    .rdata     vaddr=  0x8ad000 vsize=   2929076 rawsize=   2929152 chars=0x40000040
+    .data      vaddr=  0xb79000 vsize=  25414244 rawsize=   1601536 chars=0xc0000040
+    .rsrc      vaddr= 0x23b6000 vsize=    246640 rawsize=    246784 chars=0x40000040
+    .reloc     vaddr= 0x23f3000 vsize=   1254290 rawsize=   1254400 chars=0x42000040
+    .bind      vaddr= 0x2526000 vsize=    565248 rawsize=    562176 chars=0x60000040
+  imports:
+    KERNEL32.dll                 ( 173) FormatMessageW, FormatMessageA, UnlockFileEx, WaitForSingleObjectEx, LockFile, UnlockFile
+    USER32.dll                   (  50) RegisterClassExW, CreateWindowExW, UpdateWindow, ShowWindow, SendMessageW, DestroyWindow
+    ADVAPI32.dll                 (   6) RegCloseKey, RegSetValueExW, RegCreateKeyExW, RegQueryValueExW, RegOpenKeyExW, RegQueryValueExA
+    fmodex.dll                   (  33) ?getPosition@Channel@FMOD@@QAG?AW4FMOD_RESULT@@PAII@Z, ?setPosition@Channel@FMOD@@QAG?AW4FMOD_RESULT@@II@Z, ?release@System@FMOD@@QAG?AW4FMOD_RESULT@@XZ, ?lock@Sound@FMOD@@QAG?AW4FMOD_RESULT@@IIPAPAX0PAI1@Z, ?unlock@Sound@FMOD@@QAG?AW4FMOD_RESULT@@PAX0II@Z, ?init@System@FMOD@@QAG?AW4FMOD_RESULT@@HIPAX@Z
+    fmod_event.dll               (  37) ?getNumCategories@EventSystem@FMOD@@QAG?AW4FMOD_RESULT@@PAH@Z, ?getCategoryByIndex@EventSystem@FMOD@@QAG?AW4FMOD_RESULT@@HPAPAVEventCategory@2@@Z, ?getValue@EventParameter@FMOD@@QAG?AW4FMOD_RESULT@@PAM@Z, ?load@EventSystem@FMOD@@QAG?AW4FMOD_RESULT@@PBDPAUFMOD_EVENT_LOADINFO@@PAPAVEventProject@2@@Z, ?unload@EventSystem@FMOD@@QAG?AW4FMOD_RESULT@@XZ, ?getProjectByIndex@EventSystem@FMOD@@QAG?AW4FMOD_RESULT@@HPAPAVEventProject@2@@Z
+    fmod_event_net.dll           (   3) ?NetEventSystem_Init@FMOD@@YG?AW4FMOD_RESULT@@PAVEventSystem@1@G@Z, _FMOD_NetEventSystem_Shutdown@0, _FMOD_NetEventSystem_Update@0
+    d3dx9_39.dll                 (  15) D3DXMatrixMultiply, D3DXGetDeclVertexSize, D3DXCreateTextureFromFileInMemory, D3DXFloat16To32Array, D3DXCreateCubeTexture, D3DXCreateCubeTextureFromFileInMemory
+    DINPUT8.dll                  (   1) DirectInput8Create
+    XINPUT1_3.dll                (   2) 
+    AVIFIL32.dll                 (  11) AVIStreamWrite, AVIFileOpenA, AVIMakeCompressedStream, AVIFileExit, AVIStreamSetFormat, AVIFileCreateStreamW
+    w1import.dll                 (   4) ?W1ImportAll@@YA_NAAUW1ImportState@@@Z, ?W1EndImport@@YA_NAAUW1ImportState@@@Z, ?W1CanImport@@YA_NPB_WPADH@Z, ?W1BeginImport@@YA_NAAUW1ImportState@@@Z
+    WINMM.dll                    (   1) timeGetTime
+    steam_api.dll                (  12) SteamAPI_Init, SteamUtils, SteamUser, SteamUserStats, SteamRemoteStorage, SteamAPI_RestartAppIfNecessary
+    dbghelp.dll                  (   7) SymFromAddr, SymSetOptions, StackWalk64, SymGetModuleBase64, SymFunctionTableAccess64, SymGetLineFromAddr64
+    WSOCK32.dll                  (  23) WSAStartup, gethostname, WSACleanup, closesocket, ioctlsocket, send
+    GDI32.dll                    (   6) GetStockObject, CreateDIBSection, DeleteObject, DeleteDC, GetObjectW, CreateCompatibleDC
+    SHELL32.dll                  (   2) ShellExecuteW, SHGetFolderPathW
+    ole32.dll                    (   1) CoCreateGuid
+    d3d9.dll                     (   1) Direct3DCreate9

@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-09-17 (estate sweep) — FULL.** First pass on this project: folder bootstrapped, the modding lane's project-start hand-off drained, two topics written (REDengine VR prior art; the Witcher 2 script, console and camera routes), and a pointer to both sent to `engine-research/inbox/`.
+**Last `/gr` pass: 2026-09-23 (estate sweep) — CHECK-IN.** Checked phunkaeg's *VR Modding Playbook*: witcher3-vr and the Cyberpunk port are already tracked; nothing for REDengine 2.
+
+_Previous: **Last `/gr` pass: 2026-09-17 (estate sweep) — FULL.** First pass on this project: folder bootstrapped, the modding lane's project-start hand-off drained, two topics written (REDengine VR prior art; the Witcher 2 script, console and camera routes), and a pointer to both sent to `engine-research/inbox/`._
 
 Every research topic gathered for this project, newest first. Each row links to a self-contained
 write-up in `topics/`. Status tags:

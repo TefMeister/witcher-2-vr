@@ -37,7 +37,13 @@
   other), with **shader-reflection / disassembly evidence**:
 - Exact constant-buffer slot, parameter name(s), byte offset(s), layout,
   handedness, row/column convention:
-- Where projection `P` / FOV comes from:
+- Where projection `P` / FOV comes from: **script-reachable** (2026-09-28, `/pd`): `base_scripts.dzip` unpacks to
+  460 plain-text scripts (`dev-archive/tools/dzip_extract.py`). `CCamera` exposes `GetCameraMatrixWorldSpace()`,
+  `GetCameraPosition()`, `SetFov()` / `GetFov()`; `theGame.EnableFreeCamera()` switches an engine free camera
+  `[inferred-static 2026-09-28]`. Community script archives already load in this install (`abetterui.dzip`), the
+  route the public camera mods use (`/gr` 2026-09-17, `[reported]`). For stereo design, CyberpunkVR's method (a real
+  second engine camera, shared per-frame effects) is the prior art to read; its loader does not exist for
+  REDengine 1 `[reported]`. Detail: `dev-archive/recon/2026-09-28-scripts-unpacked-free-camera-and-exec-commands/`.
 - The per-eye override maths (`K_eye = …`):
 
 ## 7. Constant-buffer fill mechanism
@@ -56,7 +62,12 @@
 ## 9. cvar / console cheat sheet
 | command / cvar | effect | use |
 |---|---|---|
-| | | |
+| `FreeCamera` | toggles the engine free camera (`game/debug.ws`) | camera exploration; VR base |
+| `cameraSetFOV <f>`, `camFov <f>` | sets the field of view | FOV tests |
+| `CameraInterior` / `CameraExploration` / `CameraWide` | switch camera behaviour | |
+| 400 more `exec function`s | all listed in the unpacked scripts | |
+| **opening the console** | `witcher2.exe` has `CDebugConsole`, action `CHEAT_Console`; nothing is bound to it in `bin\config\Input_QWERTY.ini`. Try `IK_Tilde=(GameKey="CHEAT_Console",Value=1)` `[hypothesis]`. The Witcher 3's `DBGConsoleOn=true` is a second candidate, not a known route (`/gr`, 2026-09-17) | the `[FLAT]` row |
+| windowed | `bin\config\User.ini` `[Rendering] Fullscreen=0` `[hypothesis]` | the window rule |
 
 ## 10. Autonomous harness recipe (this game)
 - Launch to a known scene (commands used):

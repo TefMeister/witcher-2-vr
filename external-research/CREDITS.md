@@ -25,3 +25,7 @@ distributed in this repository.
   (https://www.nexusmods.com/witcher2/mods/1128), building on JackBaldy's original.
 - The Witcher 3 REDkit page "WS: Enable debug console in-game" (CD PROJEKT RED) —
   https://cdprojektred.atlassian.net/wiki/spaces/W3REDkit/pages/36208717/WS+Enable+debug+console+in-game
+
+## Sources (2026-09-29)
+
+- **Bart Wroński**, "Runtime editor-console connection in The Witcher 2" — https://bartwronski.com/2014/05/13/runtime-editor-console-connection-in-the-witcher-2/

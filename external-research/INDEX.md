@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-09-23 (estate sweep) — CHECK-IN.** Checked phunkaeg's *VR Modding Playbook*: witcher3-vr and the Cyberpunk port are already tracked; nothing for REDengine 2.
+**Last `/gr` pass: 2026-09-29 (estate sweep) — CHECK-IN.** A Witcher 2 developer's blog says the engine had a network link through which the editor set the game camera (pose, near/far, FOV); retail survival unknown, one static check proposed; pointer sent to `engine-research/inbox/`.
+
+_Previous: **Last `/gr` pass: 2026-09-23 (estate sweep) — CHECK-IN.** Checked phunkaeg's *VR Modding Playbook*: witcher3-vr and the Cyberpunk port are already tracked; nothing for REDengine 2._
 
 _Previous: **Last `/gr` pass: 2026-09-17 (estate sweep) — FULL.** First pass on this project: folder bootstrapped, the modding lane's project-start hand-off drained, two topics written (REDengine VR prior art; the Witcher 2 script, console and camera routes), and a pointer to both sent to `engine-research/inbox/`._
 
@@ -14,5 +16,6 @@ write-up in `topics/`. Status tags:
 
 | Date | Topic | Status | Why it matters |
 | --- | --- | --- | --- |
+| 2026-09-29 | [The Witcher 2 engine had a network link that let its editor drive the game camera](topics/2026-09-29-witcher-2-had-a-network-camera-link-to-its-editor.md) | 🆕 | A second, engine-native camera route beside the scripts; one cheap static check (Winsock imports) keeps or retires it |
 | 2026-09-17 | [The Witcher 2: readable scripts, official REDkit, camera mods, an unconfirmed console route](topics/2026-09-17-witcher-2-scripts-redkit-console-and-camera-mods.md) | 🆕 | Both `[PD]` board rows: Gibbed RED Tools opens `base_scripts.dzip`, and camera mods show the camera is script-reachable |
 | 2026-09-17 | [REDengine VR prior art: the "impossible" Cyberpunk mod is the open-source CyberpunkVR Port](topics/2026-09-17-redengine-vr-prior-art-cyberpunk-port-and-witcher-3.md) | 🆕 | Answers the user's research wish: true two-view stereo via a second engine camera, with per-frame state shared between eyes |

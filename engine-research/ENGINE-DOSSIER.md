@@ -122,3 +122,8 @@ and no code was read.
 - The Steam DRM wrapper hides the real start of the program until it has unpacked itself, so disassembly of the entry path will have to wait for a running copy. ⚠️ Note this is **not** a general block: ordinary strings, the class registry and the import table all read fine off disk, as the 2026-09-14 pass showed.
 - ⭐ **The scripts ship with the game** (`base_scripts.dzip`), and REDengine has a large public modding and research community `[reported]`. Much of this engine may already be explained in public, which is `/gr`'s to collect.
 - Cyberpunk 2077's VR work is on a much later REDengine generation `[reported]`, so its lessons may carry over in method more than in detail `[hypothesis]`.
+
+## Inbox folds, 2026-09-29
+
+**The editor could drive the game camera over the network (`/gr` 2026-09-29).** A Witcher 2 graphics programmer's 2014 post says the engine carried a network command protocol (on the script debugger's connection) through which the editor set the camera's position, rotation, near/far and FOV `[reported]`; retail survival unknown. Cheap static check: Winsock `bind`/`listen`/`accept` imports and listener strings near the script-debugger code; none means retire the lead `[hypothesis]`. Topic: `external-research/topics/2026-09-29-witcher-2-had-a-network-camera-link-to-its-editor.md`.
+

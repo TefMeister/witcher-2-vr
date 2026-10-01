@@ -44,6 +44,12 @@
   route the public camera mods use (`/gr` 2026-09-17, `[reported]`). For stereo design, CyberpunkVR's method (a real
   second engine camera, shared per-frame effects) is the prior art to read; its loader does not exist for
   REDengine 1 `[reported]`. Detail: `dev-archive/recon/2026-09-28-scripts-unpacked-free-camera-and-exec-commands/`.
+  **2026-10-01 (`/pd`):** `dev-archive/tools/dzip_write.py` writes DZIP v2 (460-file round trip, 0 mismatches
+  `[verified-numerically 2026-10-01]`); `build_vrcamprobe.py` builds `zzz_vrcamprobe.dzip`, a 12-line patch of
+  `player.ws` that shows the script camera (position, forward, FOV) in the HUD once a second. Unknown until a run:
+  whether later archives override scripts, whether `compiledscripts.w2scripts` must go, and what the header's
+  unknown/hash fields must hold (the exe is DRM-encrypted on disk). Note
+  `modding-notes/2026-10-01-pd-a-script-archive-that-shows-the-camera.md`.
 - The per-eye override maths (`K_eye = …`):
 
 ## 7. Constant-buffer fill mechanism

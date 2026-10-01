@@ -29,3 +29,5 @@
 # can be hundreds of MB and would break the repo or carry game content. When
 # evidence is too big to commit, say so loudly in the write-up instead.
 !dev-archive/recon/**/*.log
+
+__pycache__/

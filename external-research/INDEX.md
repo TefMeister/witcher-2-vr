@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-09-29 (estate sweep) — CHECK-IN.** A Witcher 2 developer's blog says the engine had a network link through which the editor set the game camera (pose, near/far, FOV); retail survival unknown, one static check proposed; pointer sent to `engine-research/inbox/`.
+**Last `/gr` pass: 2026-10-04 (estate sweep) — CHECK-IN.** Inbox empty. Cross-project hand-off: the Steam wrapper can be removed from a copy without running the game (Alice's project did it), which would make the debug-console search desk work; pointer sent to the dossier.
+
+_Previous: **Last `/gr` pass: 2026-09-29 (estate sweep) — CHECK-IN.** A Witcher 2 developer's blog says the engine had a network link through which the editor set the game camera (pose, near/far, FOV); retail survival unknown, one static check proposed; pointer sent to `engine-research/inbox/`._
 
 _Previous: **Last `/gr` pass: 2026-09-23 (estate sweep) — CHECK-IN.** Checked phunkaeg's *VR Modding Playbook*: witcher3-vr and the Cyberpunk port are already tracked; nothing for REDengine 2._
 

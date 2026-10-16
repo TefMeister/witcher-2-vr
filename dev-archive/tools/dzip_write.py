@@ -8,10 +8,12 @@ Layout written (as dzip_extract.py reads it, community-documented DZIP v2):
 The chunks are LZF streams made only of literal runs (control bytes 0..31): valid LZF that any LZF decoder reads,
 just not smaller. Simple and impossible to get subtly wrong; script archives are tiny anyway.
 
-⚠️ NOT KNOWN (2026-10-01): what the header's `unknown` u32 and the u64 `hash` must hold. Real archives carry
-values with no formula found; the exe that reads them is encrypted on disk (Steam DRM), so the check cannot be read
-statically. Both are written as 0 unless --unknown / --hash are given. The first flat run that loads our archive
-answers whether the game cares.
+THE HASH IS CHECKED (2026-10-16, /lm): the game recomputes a hash over the file table and refuses the archive on a
+mismatch (a repack with a copied hash gave a black screen instead of the menu; the same repack with the hash
+recomputed loaded). The hash: 64-bit FNV-1a style, prime 0x100000001B3, start 0xFFFFFFFF; per table entry, in
+order: each name byte as a signed char, then strlen(name), then time, unpackedSize, offset, packedSize
+[verified-numerically 2026-10-16, n=21 shipped archives]. build() computes it unless --hash is given.
+The `unknown` u32 is never read by the game [inferred-static]; 0 is fine.
 
 Usage: python dzip_write.py SRC_FOLDER OUT.dzip [--unknown 0xNN] [--hash 0xNN] [--check]
        (paths inside the archive use backslashes, relative to SRC_FOLDER, e.g. game\\player\\player.ws)
@@ -25,6 +27,9 @@ from pathlib import Path
 CHUNK = 0x10000          # output bytes per chunk, as the reader expects
 LITERAL_MAX = 32         # an LZF literal run carries 1..32 bytes (control byte = length - 1)
 FILETIME_EPOCH = 116444736000000000   # 1601-01-01 to 1970-01-01 in 100 ns units
+HASH_PRIME = 0x100000001B3
+HASH_START = 0x00000000FFFFFFFF
+MASK64 = (1 << 64) - 1
 
 
 def lzf_literals(block):
@@ -47,7 +52,18 @@ def pack_file(data):
     return struct.pack(f"<{len(offs)}I", *offs) + b"".join(chunks)
 
 
-def build(src, unknown=0, hash_=0):
+def table_hash(entries, now_or_times):
+    """The hash the game checks: over every table entry, in table order (see the docstring)."""
+    h = HASH_START
+    times = now_or_times if isinstance(now_or_times, list) else [now_or_times] * len(entries)
+    for (name, size, off, packed), t in zip(entries, times):
+        raw = name.encode("latin-1")
+        for v in [b - 256 if b >= 128 else b for b in raw] + [len(raw), t, size, off, packed]:
+            h = ((h ^ (v & MASK64)) * HASH_PRIME) & MASK64
+    return h
+
+
+def build(src, unknown=0, hash_=None):
     files = sorted(p for p in Path(src).rglob("*") if p.is_file())
     now = int(time.time() * 10_000_000) + FILETIME_EPOCH
     header_len = 4 + 4 * 3 + 8 * 2
@@ -62,6 +78,8 @@ def build(src, unknown=0, hash_=0):
     for name, size, off, packed in entries:
         raw = name.encode("latin-1") + b"\0"
         table += struct.pack("<H", len(raw)) + raw + struct.pack("<4Q", now, size, off, packed)
+    if hash_ is None:
+        hash_ = table_hash(entries, now)
     header = b"DZIP" + struct.pack("<3I", 2, len(entries), unknown) + struct.pack("<2Q", header_len + len(body), hash_)
     return bytes(header + body + table), entries
 
@@ -70,7 +88,7 @@ def main():
     args = sys.argv[1:]
     src, out = args[0], args[1]
     unknown = int(args[args.index("--unknown") + 1], 0) if "--unknown" in args else 0
-    hash_ = int(args[args.index("--hash") + 1], 0) if "--hash" in args else 0
+    hash_ = int(args[args.index("--hash") + 1], 0) if "--hash" in args else None
     blob, entries = build(src, unknown, hash_)
     Path(out).write_bytes(blob)
     print(f"wrote {out}: {len(entries)} file(s), {len(blob)} bytes")

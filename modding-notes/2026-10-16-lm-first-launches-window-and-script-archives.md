@@ -73,6 +73,26 @@ probe read FOV 40 `[verified-live 2026-10-16, n=1]`. ⚠️ The ports listen on 
   n=1]`. `-script "FreeCamera()"` on the command line: also no free camera, n=1. Open question for the reader:
   whether the native is stubbed in retail.
 
+## The camera can be steered from outside the game
+
+The engine's own free camera is switched off in retail (its native does nothing). The gameplay camera, though, can
+be turned to an exact angle: `camResetRotationTo(angle, 0)` over the remote console pointed it north at 0, west at
+90, south at 180 and east at 270, read off the `VRCAM` line `[verified-live 2026-10-16, n=1 per angle]`. Streams of
+these commands at 30 and 60 per second were all handled with 2–9 ms replies and ended on the right angle
+(`staging/witcher-2-vr/debug-channel/yaw_sweep.py`), recorded as `yaw-sweep_2026-10-16_18-31-58.mp4`. That is the
+first head-turn route; whether it looks smooth needs a human eye.
+
+## Screen effects for VR
+
+`AllowBlur`, `AllowDOF`, `AllowCutsceneDOF`, `AllowScatterDOF`, `AllowMotionBlur`, `AllowVignette`, `AllowSharpen` set
+to 0 in the live `User.ini`: at the same tutorial spot the dark corners and the soft distant trees were gone
+`[verified-live 2026-10-16, n=1, by eye]`. Put back for flat play afterwards.
+
+## Not recorded
+
+Only the first two launches (started through Steam) were recorded by the automatic recorder; the later direct
+starts were not, so the console and archive tests have no video. The steering sweep was recorded by hand.
+
 ## Installed now (dev PC)
 
 - `bin\d3d9.dll`: the logging proxy, sha256 `2dc123ec...`, writes `bin\witcher2_proxy_log.txt`.

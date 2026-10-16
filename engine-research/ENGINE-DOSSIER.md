@@ -60,9 +60,26 @@
   `[verified-live 2026-10-16, n=1]`. `cameraSetFOV(40)` over the remote console zoomed the picture and the probe read
   40 `[verified-live 2026-10-16, n=1]`. Script `Log()` is stubbed in retail (native `0x0092F9F9`), so HUD text is the
   only script output `[inferred-static 2026-10-16]`.
-- **Free camera:** `FreeCamera()` (`theGame.EnableFreeCamera(!IsFreeCameraEnabled())`, no cheat gate in the script)
-  sent over the remote console replied "handled" but W still walked Geralt and the HUD stayed: no free camera
-  `[verified-live 2026-10-16, n=1]`. Whether the native is stubbed is the reader's open question.
+- **Free camera: dead in retail.** `FreeCamera()` over the remote console and `-script "FreeCamera()"` both gave no
+  free camera `[verified-live 2026-10-16, n=1 each]`; the native behind `theGame.EnableFreeCamera` (`0x00AA7816`)
+  reads its bool and returns, and the free-camera object is never created `[inferred-static 2026-10-16]`.
+- ⭐ **STEERING THE GAMEPLAY CAMERA WORKS (2026-10-16).** The camera is an animated entity: its view is one bone
+  (index at `CCamera+0x158`) turned by `CBehaviorGraphCameraControllerNode` from float graph variables
+  `[inferred-static]`. `theCamera.ResetRotationTo(smoothly, horizontalAngle, optional verticalAngle, optional
+  duration)` sets an **absolute** yaw; through its exec wrapper `camResetRotationTo(angle, dur)` over the remote
+  console: 0 → fwd (0, 0.991), 90 → (−0.991, 0), 180 → (0, −0.991), 270 → (0.991, 0), pitch unchanged
+  `[verified-live 2026-10-16, n=1 per angle]`. So **yaw is degrees, anticlockwise seen from above, 0 = +Y**
+  (fwd = (−sin θ, cos θ)). Streams of 46, 91 and 181 commands at 30 and 60 per second over one connection were all
+  handled, replies 2–9 ms, and the camera ended on the last angle `[verified-live 2026-10-16, n=1 each]`; recorded as
+  `yaw-sweep_2026-10-16_18-31-58.mp4`. Whether it LOOKS smooth is unjudged. The exec wrapper passes `smoothly=true`
+  and pitch 0; a script of ours can call `ResetRotationTo(false, yaw, pitch, 0)` directly.
+- Other working camera natives `[inferred-static 2026-10-16]`: `Rotate(leftRightDelta, upDownDelta)` (per-frame rate
+  input, not cumulative), `SetBehaviorVariable(name, value)` (any graph float: cameraLeftRightRot, cameraUpDownRot,
+  cameraFurther = distance, followHorizontal, cameraShakeStrength…), `LookAtStatic(target, duration, activatingTime)`,
+  `SetZoom`, `RaiseEvent`, `TeleportWithRotation`, and the `CCameraComponent`'s `SetRotation`/`SetPosition` (local
+  offset; possibly the cleanest head-tracking offset `[hypothesis]`). **Native fallback:** the controller node's
+  sample routine `0x00A13CED` reads one angle in degrees and builds the bone quaternion; hook it to replace the angle.
+  The step where the renderer turns the bone into the D3D9 view is not located yet.
 - The per-eye override maths (`K_eye = …`):
 
 ## 7a. Script archives: the table hash, mount order, where scripts come from (2026-10-16)

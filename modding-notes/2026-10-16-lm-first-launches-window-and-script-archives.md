@@ -80,7 +80,8 @@ be turned to an exact angle: `camResetRotationTo(angle, 0)` over the remote cons
 90, south at 180 and east at 270, read off the `VRCAM` line `[verified-live 2026-10-16, n=1 per angle]`. Streams of
 these commands at 30 and 60 per second were all handled with 2–9 ms replies and ended on the right angle
 (`staging/witcher-2-vr/debug-channel/yaw_sweep.py`), recorded as `yaw-sweep_2026-10-16_18-31-58.mp4`. That is the
-first head-turn route; whether it looks smooth needs a human eye.
+first head-turn route. **Tefa watched the recording and called the turning smooth**, both the 30 and the 60 per
+second halves (flat-screen video, not a headset) `[reported 2026-10-16, n=1]`.
 
 ## Screen effects for VR
 

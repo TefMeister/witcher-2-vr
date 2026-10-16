@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-10-04 (estate sweep) — CHECK-IN.** Inbox empty. Cross-project hand-off: the Steam wrapper can be removed from a copy without running the game (Alice's project did it), which would make the debug-console search desk work; pointer sent to the dossier.
+**Last `/gr` pass: 2026-10-16 (estate sweep) — CHECK-IN.** Inbox empty. One search on the screen-blood `[PD]` row: no Witcher 2 mod found, but the sequel drives the effect from a script; topic written and pointed at the dossier.
+
+_Previous: **Last `/gr` pass: 2026-10-04 (estate sweep) — CHECK-IN.** Inbox empty. Cross-project hand-off: the Steam wrapper can be removed from a copy without running the game (Alice's project did it), which would make the debug-console search desk work; pointer sent to the dossier._
 
 _Previous: **Last `/gr` pass: 2026-09-29 (estate sweep) — CHECK-IN.** A Witcher 2 developer's blog says the engine had a network link through which the editor set the game camera (pose, near/far, FOV); retail survival unknown, one static check proposed; pointer sent to `engine-research/inbox/`._
 
@@ -18,6 +20,7 @@ write-up in `topics/`. Status tags:
 
 | Date | Topic | Status | Why it matters |
 | --- | --- | --- | --- |
-| 2026-09-29 | [The Witcher 2 engine had a network link that let its editor drive the game camera](topics/2026-09-29-witcher-2-had-a-network-camera-link-to-its-editor.md) | 🆕 | A second, engine-native camera route beside the scripts; one cheap static check (Winsock imports) keeps or retires it |
+| 2026-10-16 | [The low-health screen effect is a script in The Witcher 3: look for the same in The Witcher 2](topics/2026-10-16-low-health-screen-effect-is-a-script-in-witcher-3.md) | 🆕 | The `[PD]` screen-blood row: points at the scripts our archive already replaces. |
+| 2026-09-29 | [The Witcher 2 engine had a network link that let its editor drive the game camera](topics/2026-09-29-witcher-2-had-a-network-camera-link-to-its-editor.md) | ✅ | A second, engine-native camera route beside the scripts; one cheap static check (Winsock imports) keeps or retires it |
 | 2026-09-17 | [The Witcher 2: readable scripts, official REDkit, camera mods, an unconfirmed console route](topics/2026-09-17-witcher-2-scripts-redkit-console-and-camera-mods.md) | 🆕 | Both `[PD]` board rows: Gibbed RED Tools opens `base_scripts.dzip`, and camera mods show the camera is script-reachable |
 | 2026-09-17 | [REDengine VR prior art: the "impossible" Cyberpunk mod is the open-source CyberpunkVR Port](topics/2026-09-17-redengine-vr-prior-art-cyberpunk-port-and-witcher-3.md) | 🆕 | Answers the user's research wish: true two-view stereo via a second engine camera, with per-frame state shared between eyes |

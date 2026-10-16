@@ -29,3 +29,9 @@ distributed in this repository.
 ## Sources (2026-09-29)
 
 - **Bart Wroński**, "Runtime editor-console connection in The Witcher 2" — https://bartwronski.com/2014/05/13/runtime-editor-console-connection-in-the-witcher-2/
+
+## Sources (2026-10-16)
+
+- Witcher 3 Nexus mod removing the low-health blood edges by editing `lowHealth.ws` — https://www.nexusmods.com/witcher3/mods/406
+- Witcher 3 next-gen screen-cleaning mod (blood spatter and low-health corners as optional files) — https://nexusmods.com/witcher3/mods/7233
+

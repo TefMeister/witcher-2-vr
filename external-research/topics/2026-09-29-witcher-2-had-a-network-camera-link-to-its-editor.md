@@ -35,3 +35,11 @@ retire this lead cheaply; imports plus listener strings would make it worth a fl
 ## Credits
 
 Bart Wroński (blog post above).
+
+## Outcome (2026-10-16)
+
+**Confirmed and used.** The modding lane's first live session found the retail game listening on TCP 47000/47001
+on every launch; `ConsoleCommand` packets run script `exec` functions, `cameraSetFOV(40)` worked and
+`camResetRotationTo(angle, 0)` turned the gameplay camera to exact angles, streamed at 30-60 per second
+`[verified-live 2026-10-16, n=1 each]`. Source of the verdict: `modding-notes/2026-10-16-lm-first-launches-window-and-script-archives.md`.
+

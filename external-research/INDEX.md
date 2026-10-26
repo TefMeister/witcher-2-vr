@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-10-16 (estate sweep) — CHECK-IN.** Inbox empty. One search on the screen-blood `[PD]` row: no Witcher 2 mod found, but the sequel drives the effect from a script; topic written and pointed at the dossier.
+**Last `/gr` pass: 2026-10-26 — CHECK-IN.** Inbox empty; board unchanged since 10-16. One search for the view/projection row: a 2012 Helix Mod 3D Vision fix shows this renderer runs as a two-eye picture, and names what broke (flat shadows, a screen-locked HUD, a Steam launcher loop with its files in `bin`); one topic.
+
+_Previous: **Last `/gr` pass: 2026-10-16 (estate sweep) — CHECK-IN.** Inbox empty. One search on the screen-blood `[PD]` row: no Witcher 2 mod found, but the sequel drives the effect from a script; topic written and pointed at the dossier._
 
 _Previous: **Last `/gr` pass: 2026-10-04 (estate sweep) — CHECK-IN.** Inbox empty. Cross-project hand-off: the Steam wrapper can be removed from a copy without running the game (Alice's project did it), which would make the debug-console search desk work; pointer sent to the dossier._
 
@@ -20,6 +22,7 @@ write-up in `topics/`. Status tags:
 
 | Date | Topic | Status | Why it matters |
 | --- | --- | --- | --- |
+| 2026-10-26 | [A 2012 3D Vision fix says what breaks when the renderer is drawn twice](topics/2026-10-26-a-2012-3d-vision-fix-says-shadows-and-hud-break-in-stereo.md) | 🆕 | Shadows went flat and the HUD stuck to the screen under 3D Vision; both are checks for our first two-eye image. |
 | 2026-10-16 | [The low-health screen effect is a script in The Witcher 3: look for the same in The Witcher 2](topics/2026-10-16-low-health-screen-effect-is-a-script-in-witcher-3.md) | 🆕 | The `[PD]` screen-blood row: points at the scripts our archive already replaces. |
 | 2026-09-29 | [The Witcher 2 engine had a network link that let its editor drive the game camera](topics/2026-09-29-witcher-2-had-a-network-camera-link-to-its-editor.md) | ✅ | A second, engine-native camera route beside the scripts; one cheap static check (Winsock imports) keeps or retires it |
 | 2026-09-17 | [The Witcher 2: readable scripts, official REDkit, camera mods, an unconfirmed console route](topics/2026-09-17-witcher-2-scripts-redkit-console-and-camera-mods.md) | 🆕 | Both `[PD]` board rows: Gibbed RED Tools opens `base_scripts.dzip`, and camera mods show the camera is script-reachable |

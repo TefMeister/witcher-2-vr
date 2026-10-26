@@ -34,3 +34,7 @@ distributed in this repository.
 - Witcher 3 Nexus mod removing the low-health blood edges by editing `lowHealth.ws` — https://www.nexusmods.com/witcher3/mods/406
 - Witcher 3 next-gen screen-cleaning mod (blood spatter and low-health corners as optional files) — https://nexusmods.com/witcher3/mods/7233
 
+
+## Sources (2026-10-26)
+
+- **eqzitara** and **Artox**, Witcher 2: Enhanced Edition 3D Vision fix, Helix Mod blog (comments incl. **bo3b**) — https://helixmod.blogspot.com/2012/04/witcher-2-enhanced-edition.html

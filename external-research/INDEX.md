@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-10-26 — CHECK-IN.** Inbox empty; board unchanged since 10-16. One search for the view/projection row: a 2012 Helix Mod 3D Vision fix shows this renderer runs as a two-eye picture, and names what broke (flat shadows, a screen-locked HUD, a Steam launcher loop with its files in `bin`); one topic.
+**Last `/gr` pass: 2026-11-07 (estate sweep) — CHECK-IN.** Inbox empty; one combined search found no Witcher 2 VR mod (only projects for the first Witcher). Nothing new.
+
+_Previous: **Last `/gr` pass: 2026-10-26 — CHECK-IN.** Inbox empty; board unchanged since 10-16. One search for the view/projection row: a 2012 Helix Mod 3D Vision fix shows this renderer runs as a two-eye picture, and names what broke (flat shadows, a screen-locked HUD, a Steam launcher loop with its files in `bin`); one topic._
 
 _Previous: **Last `/gr` pass: 2026-10-16 (estate sweep) — CHECK-IN.** Inbox empty. One search on the screen-blood `[PD]` row: no Witcher 2 mod found, but the sequel drives the effect from a script; topic written and pointed at the dossier._
 

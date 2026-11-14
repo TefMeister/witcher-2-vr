@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-11-07 (estate sweep) — CHECK-IN.** Inbox empty; one combined search found no Witcher 2 VR mod (only projects for the first Witcher). Nothing new.
+**Last `/gr` pass: 2026-11-14 (check-ins beside the Keeper's sweep of the same day) — CHECK-IN.** Inbox empty; one search found no Witcher 2 VR mod. Nothing new.
+
+_Previous: **Last `/gr` pass: 2026-11-07 (estate sweep) — CHECK-IN.** Inbox empty; one combined search found no Witcher 2 VR mod (only projects for the first Witcher). Nothing new._
 
 _Previous: **Last `/gr` pass: 2026-10-26 — CHECK-IN.** Inbox empty; board unchanged since 10-16. One search for the view/projection row: a 2012 Helix Mod 3D Vision fix shows this renderer runs as a two-eye picture, and names what broke (flat shadows, a screen-locked HUD, a Steam launcher loop with its files in `bin`); one topic._
 
